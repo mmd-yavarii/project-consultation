@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 
 const projects = [
@@ -11,7 +10,10 @@ const projects = [
         description: 'طراحی رابط کاربری پیچیده معامله کریپتو همراه با نمودار زنده و پایداری بالا.',
         tags: ['Next.js', 'Tailwind', 'WebSocket'],
         imageSrc: 'https://cdn.dribbble.com/userupload/45017446/file/still-7ec654e6158c4a63475eef50e16e65e9.png',
+        projectLink: '/project-details/01',
+        githubLink: '#',
     },
+
     {
         number: '02',
         title: 'پلتفرم آنلاین هوش مصنوعی',
@@ -19,7 +21,10 @@ const projects = [
         description: 'سرویس تولید محتوای هوشمند با اتصال به مدل‌های زبان بزرگ و سرعت پاسخ‌دهی بالا.',
         tags: ['React', 'Node.js', 'OpenAI API'],
         imageSrc: 'https://cdn.dribbble.com/userupload/45017446/file/still-7ec654e6158c4a63475eef50e16e65e9.png',
+        projectLink: '/project-details/02',
+        githubLink: '#',
     },
+
     {
         number: '03',
         title: 'داشبورد آنالیتیکس فروش',
@@ -27,7 +32,10 @@ const projects = [
         description: 'سیستم مانیتورینگ داده‌های تجاری و گزارش‌گیری پیشرفته لحظه‌ای.',
         tags: ['TypeScript', 'Recharts', 'Next.js'],
         imageSrc: 'https://cdn.dribbble.com/userupload/45017446/file/still-7ec654e6158c4a63475eef50e16e65e9.png',
+        projectLink: '/project-details/03',
+        githubLink: '#',
     },
+
     {
         number: '04',
         title: 'اپلیکیشن مدیریت وظایف',
@@ -35,6 +43,8 @@ const projects = [
         description: 'طراحی تجربه کاربری شبیه به Linear برای تیم‌های توسعه نرم‌افزار.',
         tags: ['PWA', 'Zustand', 'Tailwind'],
         imageSrc: 'https://cdn.dribbble.com/userupload/45017446/file/still-7ec654e6158c4a63475eef50e16e65e9.png',
+        projectLink: '/project-details/04',
+        githubLink: '#',
     },
 ];
 
@@ -92,23 +102,7 @@ export default function Projects() {
 
             {/* Header */}
 
-            <motion.div
-                initial={{
-                    opacity: 0,
-                    y: 25,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                }}
-                viewport={{
-                    once: true,
-                    amount: 0.3,
-                }}
-                transition={{
-                    duration: 0.6,
-                    ease: 'easeOut',
-                }}
+            <div
                 className="
                     mx-auto
                     mb-10
@@ -136,31 +130,16 @@ export default function Projects() {
                         backdrop-blur-xl
                     "
                 >
-                    <span className="relative flex h-1.5 w-1.5">
-                        <span
-                            className="
-                                absolute
-                                inline-flex
-                                h-full
-                                w-full
-                                animate-ping
-                                rounded-full
-                                bg-cyan-400
-                                opacity-50
-                            "
-                        />
-
-                        <span
-                            className="
-                                relative
-                                inline-flex
-                                h-1.5
-                                w-1.5
-                                rounded-full
-                                bg-cyan-400
-                            "
-                        />
-                    </span>
+                    <span
+                        className="
+                            relative
+                            flex
+                            h-1.5
+                            w-1.5
+                            rounded-full
+                            bg-cyan-400
+                        "
+                    />
                     نمونه‌کارهای برگزیده
                 </div>
 
@@ -207,7 +186,7 @@ export default function Projects() {
                 >
                     مجموعه‌ای از پروژه‌های واقعی در زمینه توسعه وب، طراحی محصول و ساخت نرم‌افزارهای مدرن.
                 </p>
-            </motion.div>
+            </div>
 
             {/* Projects Grid */}
 
@@ -222,26 +201,7 @@ export default function Projects() {
                 "
             >
                 {projects.map((project) => (
-                    <motion.div
-                        key={project.number}
-                        initial={{
-                            opacity: 0,
-                            y: 35,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                            amount: 0.2,
-                        }}
-                        transition={{
-                            duration: 0.6,
-                            ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="h-full"
-                    >
+                    <div key={project.number} className="h-full">
                         <ProjectCard
                             number={project.number}
                             title={project.title}
@@ -249,8 +209,10 @@ export default function Projects() {
                             description={project.description}
                             tags={project.tags}
                             imageSrc={project.imageSrc}
+                            projectLink={project.projectLink}
+                            githubLink={project.githubLink}
                         />
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

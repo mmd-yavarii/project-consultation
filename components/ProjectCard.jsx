@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ProjectCard({
+    number,
     title = 'داشبورد مدیریت',
     description = 'یک داشبورد مدیریتی برای مدیریت اطلاعات، کاربران و فرایندهای کسب‌وکار.',
     tags = ['React', 'Next.js', 'REST API'],
@@ -17,6 +18,7 @@ export default function ProjectCard({
 
     const handleMouseMove = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
+
         setMousePosition({
             x: e.clientX - rect.left,
             y: e.clientY - rect.top,
@@ -32,6 +34,7 @@ export default function ProjectCard({
             className="
                 group
                 relative
+                h-full
                 w-full
                 max-w-md
                 overflow-hidden
@@ -40,13 +43,13 @@ export default function ProjectCard({
                 border-white/10
                 bg-slate-900/40
                 p-4
-                sm:p-5
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:-translate-y-1.5
                 hover:border-cyan-500/30
                 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.5)]
+                sm:p-5
             "
         >
             {/* Spotlight Interactive Glow */}
@@ -54,22 +57,26 @@ export default function ProjectCard({
                 className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300"
                 style={{
                     opacity: isHovered ? 1 : 0,
-                    background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(34, 211, 238, 0.12), transparent 40%)`,
+                    background: `radial-gradient(
+                        400px circle at ${mousePosition.x}px ${mousePosition.y}px,
+                        rgba(34, 211, 238, 0.12),
+                        transparent 40%
+                    )`,
                 }}
             />
 
-            {/* Project Image Container */}
+            {/* Project Image */}
             <div
                 className="
                     relative
                     h-52
-                    sm:h-56
                     w-full
                     overflow-hidden
                     rounded-2xl
                     border
                     border-white/10
                     bg-slate-950/50
+                    sm:h-56
                 "
             >
                 <Image
@@ -88,7 +95,17 @@ export default function ProjectCard({
                 />
 
                 {/* Gradient Overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        bg-gradient-to-t
+                        from-slate-950/80
+                        via-transparent
+                        to-transparent
+                    "
+                />
             </div>
 
             {/* Card Information */}
@@ -97,13 +114,13 @@ export default function ProjectCard({
                 <h3
                     className="
                         text-xl
-                        sm:text-2xl
                         font-bold
                         tracking-tight
                         text-white
                         transition-colors
                         duration-300
                         group-hover:text-cyan-300
+                        sm:text-2xl
                     "
                 >
                     {title}
@@ -114,15 +131,15 @@ export default function ProjectCard({
                     className="
                         mt-2.5
                         text-xs
-                        sm:text-sm
                         leading-6
                         text-slate-400
+                        sm:text-sm
                     "
                 >
                     {description}
                 </p>
 
-                {/* Tech Tags - Simple Minimal Style */}
+                {/* Tech Tags */}
                 <div className="mt-4 flex flex-wrap gap-1.5">
                     {tags.map((tag) => (
                         <span
@@ -156,26 +173,25 @@ export default function ProjectCard({
                         pt-4
                     "
                 >
-                    {/* View Live Project Link */}
+                    {/* View Project */}
                     <Link
                         href={projectLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="
                             group/link
                             inline-flex
                             items-center
                             gap-2
                             text-xs
-                            sm:text-sm
                             font-bold
                             text-cyan-400
                             transition-colors
                             duration-200
                             hover:text-cyan-300
+                            sm:text-sm
                         "
                     >
                         <span>مشاهده پروژه</span>
+
                         <svg
                             className="
                                 h-4
@@ -193,11 +209,9 @@ export default function ProjectCard({
                         </svg>
                     </Link>
 
-                    {/* GitHub Code Link */}
+                    {/* GitHub */}
                     <Link
                         href={githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         aria-label="مشاهده مخزن گیت‌هاب"
                         className="
                             inline-flex
@@ -223,6 +237,7 @@ export default function ProjectCard({
                         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.341-3.369-1.341-.455-1.158-1.11-1.466-1.11-1.466-.908-.621.069-.608.069-.608 1.004.071 1.532 1.032 1.532 1.032.892 1.529 2.341 1.087 2.91.831.091-.647.35-1.087.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .269.18.58.688.482A10.001 10.001 0 0 0 22 12C22 6.477 17.523 2 12 2Z" />
                         </svg>
+
                         <span>گیت‌هاب</span>
                     </Link>
                 </div>

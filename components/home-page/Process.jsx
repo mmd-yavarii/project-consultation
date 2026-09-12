@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { ScanSearch, PenTool, Terminal, ServerCog, Gauge, CloudUpload } from 'lucide-react';
 
 /* ---------------------------------------------
@@ -166,14 +165,10 @@ function StepMarker({ step }) {
                     items-center
                     justify-center
                     rounded-full
-
                     border
                     border-white/10
-
                     bg-slate-950/95
-
                     shadow-[0_0_25px_rgba(34,211,238,0.06)]
-
                     backdrop-blur-xl
 
                     transition-all
@@ -196,10 +191,8 @@ function StepMarker({ step }) {
                         rounded-full
                         border
                         border-cyan-400/[0.08]
-
-                        transition-all
+                        transition-colors
                         duration-300
-
                         group-hover:border-cyan-400/25
                     "
                 />
@@ -211,17 +204,12 @@ function StepMarker({ step }) {
                         absolute
                         right-2.5
                         top-2.5
-
                         h-1.5
                         w-1.5
-
                         rounded-full
-
                         bg-cyan-400/60
-
                         transition-all
                         duration-300
-
                         group-hover:bg-cyan-300
                         group-hover:shadow-[0_0_8px_rgba(34,211,238,0.8)]
                     "
@@ -235,14 +223,10 @@ function StepMarker({ step }) {
                         relative
                         h-5
                         w-5
-
                         text-cyan-400/80
-
                         transition-colors
                         duration-300
-
                         group-hover:text-cyan-300
-
                         lg:h-6
                         lg:w-6
                     "
@@ -256,23 +240,16 @@ function StepMarker({ step }) {
                         -bottom-2
                         left-1/2
                         -translate-x-1/2
-
                         rounded-full
-
                         border
                         border-cyan-400/15
-
                         bg-slate-950
-
                         px-2
                         py-0.5
-
                         text-[9px]
                         font-semibold
                         tracking-[0.15em]
-
                         text-cyan-400
-
                         shadow-[0_0_10px_rgba(34,211,238,0.05)]
                     "
                 >
@@ -298,12 +275,9 @@ export default function Process() {
                 w-full
                 max-w-7xl
                 overflow-hidden
-
                 px-4
                 py-20
-
                 sm:px-6
-
                 lg:px-8
                 lg:py-32
             "
@@ -319,16 +293,11 @@ export default function Process() {
                     left-1/2
                     top-1/4
                     -z-10
-
                     h-[500px]
                     w-[500px]
-
                     -translate-x-1/2
-
                     rounded-full
-
                     bg-cyan-500/[0.06]
-
                     blur-[140px]
                 "
             />
@@ -340,14 +309,10 @@ export default function Process() {
                     bottom-10
                     right-10
                     -z-10
-
                     h-72
                     w-72
-
                     rounded-full
-
                     bg-blue-600/[0.05]
-
                     blur-[120px]
                 "
             />
@@ -356,28 +321,12 @@ export default function Process() {
                 Header
             --------------------------------- */}
 
-            <motion.div
-                initial={{
-                    opacity: 0,
-                    y: 20,
-                }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                }}
-                viewport={{
-                    once: true,
-                    amount: 0.3,
-                }}
-                transition={{
-                    duration: 0.6,
-                }}
+            <div
                 className="
                     mx-auto
                     mb-10
                     max-w-xl
                     text-center
-
                     lg:mb-16
                 "
             >
@@ -388,22 +337,15 @@ export default function Process() {
                         inline-flex
                         items-center
                         gap-1.5
-
                         rounded-full
-
                         border
                         border-cyan-500/20
-
                         bg-cyan-500/[0.06]
-
                         px-3
                         py-1
-
                         text-[11px]
                         font-semibold
-
                         text-cyan-300
-
                         backdrop-blur-xl
                     "
                 >
@@ -413,40 +355,10 @@ export default function Process() {
                             flex
                             h-1.5
                             w-1.5
+                            rounded-full
+                            bg-cyan-400
                         "
-                    >
-                        <span
-                            className="
-                                absolute
-                                inline-flex
-
-                                h-full
-                                w-full
-
-                                animate-ping
-
-                                rounded-full
-
-                                bg-cyan-400
-
-                                opacity-50
-                            "
-                        />
-
-                        <span
-                            className="
-                                relative
-                                inline-flex
-
-                                h-1.5
-                                w-1.5
-
-                                rounded-full
-
-                                bg-cyan-400
-                            "
-                        />
-                    </span>
+                    />
                     فرایند استاندارد توسعه
                 </div>
 
@@ -455,15 +367,11 @@ export default function Process() {
                 <h2
                     className="
                         mt-3
-
                         text-xl
                         font-bold
-
                         leading-snug
                         tracking-tight
-
                         text-white
-
                         sm:text-2xl
                         lg:text-3xl
                     "
@@ -474,9 +382,7 @@ export default function Process() {
                             bg-gradient-to-r
                             from-cyan-400
                             to-blue-500
-
                             bg-clip-text
-
                             text-transparent
                         "
                     >
@@ -491,18 +397,15 @@ export default function Process() {
                         mx-auto
                         mt-2.5
                         max-w-lg
-
                         text-xs
                         leading-6
-
                         text-slate-400
-
                         sm:text-sm
                     "
                 >
                     یک مسیر شفاف و مهندسی‌شده برای تبدیل ایده به محصولی سریع، مقیاس‌پذیر و قابل اعتماد.
                 </p>
-            </motion.div>
+            </div>
 
             {/* ---------------------------------
                 Timeline
@@ -514,21 +417,15 @@ export default function Process() {
                 <div
                     className="
                         absolute
-
                         left-[5%]
                         right-[5%]
-
                         top-10
-
                         hidden
                         h-px
-
                         bg-gradient-to-r
-
                         from-transparent
                         via-cyan-400/20
                         to-transparent
-
                         lg:block
                     "
                 />
@@ -538,25 +435,17 @@ export default function Process() {
                 <div
                     className="
                         pointer-events-none
-
                         absolute
-
                         left-[8%]
                         right-[8%]
-
                         top-10
-
                         hidden
                         h-px
-
                         bg-gradient-to-r
-
                         from-transparent
                         via-cyan-400/10
                         to-transparent
-
                         blur-sm
-
                         lg:block
                     "
                 />
@@ -566,19 +455,14 @@ export default function Process() {
                 <div
                     className="
                         absolute
-
                         bottom-10
                         right-[27px]
                         top-8
-
                         w-px
-
                         bg-gradient-to-b
-
                         from-cyan-400/30
                         via-cyan-400/10
                         to-transparent
-
                         lg:hidden
                     "
                 />
@@ -588,41 +472,20 @@ export default function Process() {
                 <div
                     className="
                         grid
-
                         gap-8
-
                         lg:grid-cols-6
                         lg:gap-4
                     "
                 >
-                    {steps.map((step, index) => (
-                        <motion.div
+                    {steps.map((step) => (
+                        <div
                             key={step.number}
-                            initial={{
-                                opacity: 0,
-                                y: 30,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                                amount: 0.25,
-                            }}
-                            transition={{
-                                duration: 0.55,
-                                delay: index * 0.08,
-                                ease: [0.22, 1, 0.36, 1],
-                            }}
                             className="
                                 group
                                 relative
-
                                 flex
                                 items-start
                                 gap-4
-
                                 lg:flex-col
                                 lg:items-center
                                 lg:gap-0
@@ -637,11 +500,8 @@ export default function Process() {
                             <SpotlightCard
                                 className="
                                     flex-1
-
                                     lg:mt-8
-
                                     lg:min-h-[220px]
-
                                     lg:p-5
                                 "
                             >
@@ -650,7 +510,6 @@ export default function Process() {
                                 <div
                                     className="
                                         mb-3
-
                                         flex
                                         items-center
                                         justify-between
@@ -660,11 +519,8 @@ export default function Process() {
                                         className="
                                             text-[9px]
                                             font-medium
-
                                             uppercase
-
                                             tracking-[0.18em]
-
                                             text-cyan-400/50
                                         "
                                     >
@@ -675,7 +531,6 @@ export default function Process() {
                                         className="
                                             h-px
                                             w-7
-
                                             bg-cyan-400/15
                                         "
                                     />
@@ -687,14 +542,10 @@ export default function Process() {
                                     className="
                                         text-base
                                         font-bold
-
                                         text-white
-
                                         transition-colors
                                         duration-300
-
                                         group-hover:text-cyan-300
-
                                         lg:text-[15px]
                                     "
                                 >
@@ -706,12 +557,9 @@ export default function Process() {
                                 <p
                                     className="
                                         mt-2
-
                                         text-xs
                                         leading-6
-
                                         text-slate-400
-
                                         lg:text-[13px]
                                         lg:leading-6
                                     "
@@ -719,7 +567,7 @@ export default function Process() {
                                     {step.description}
                                 </p>
                             </SpotlightCard>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

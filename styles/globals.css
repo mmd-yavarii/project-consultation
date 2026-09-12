@@ -295,3 +295,86 @@ button {
         animation-iteration-count: 1 !important;
     }
 }
+
+/* اضافه کن به globals.css — این‌ها جایگزین انیمیشن‌های framer-motion
+   برای عناصر infinite/دکوریتیو هستن، تا روی compositor thread اجرا بشن */
+
+@keyframes glow-right {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.95) translate(0, 0);
+    }
+    50% {
+        opacity: 0.55;
+        transform: scale(1.08) translate(-18px, 12px);
+    }
+}
+@keyframes glow-left {
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        opacity: 0.45;
+        transform: scale(1.1) translate(20px, -15px);
+    }
+}
+@keyframes bob-slow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes ping-slow {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.animate-glow-right {
+    animation: glow-right 8s ease-in-out infinite;
+}
+.animate-glow-left {
+    animation: glow-left 10s ease-in-out infinite 1s;
+}
+.animate-bob-slow {
+    animation: bob-slow 6s ease-in-out infinite;
+    will-change: transform;
+}
+.animate-shimmer {
+    animation: shimmer 3.5s ease-in-out infinite;
+}
+.animate-ping-slow {
+    animation: ping-slow 2s ease-out infinite;
+}
+
+@keyframes border-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+.animate-border-flow {
+    background-size: 200% 200%;
+    animation: border-flow 6s linear infinite;
+}
